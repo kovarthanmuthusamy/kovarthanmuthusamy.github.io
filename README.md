@@ -88,6 +88,19 @@ matches `pycocotools`) kept it honest.
 
 `PyTorch` `ONNX Runtime` `FastAPI` `Docker` `nuScenes` `Hydra` `W&B` `GitHub Actions` `Claude Code`
 
+### 🩺 [KubeMedic](https://github.com/kovarthanmuthusamy/kubmedic) — self-healing Kubernetes incident-response agent *(in progress)*
+
+An agent that detects a failure in a running microservice system, investigates it with read-only tools
+(kubectl, PromQL, LogQL over MCP) and opens the fix as a pull request; a human approves and ArgoCD deploys it.
+An eval harness will compare local models (Ollama) with a paid API on 10–12 fault scenarios.
+
+- **Done:** SHA-256-verified tool installers, a three-node kind cluster pinned by digest, Ollama on two GV100 GPUs
+  with a tool-calling smoke test, `make doctor`
+- **Planned:** LangGraph agent, Online Boutique + Prometheus/Loki, ArgoCD GitOps, Langfuse tracing, replay-based eval gate in CI
+- **Design:** safety in the architecture, not the prompt — read-only RBAC, PR-only writes, per-incident cost budget
+
+`Kubernetes` `kind` `Helm` `Ollama` `LangGraph` `MCP` `LiteLLM` `ArgoCD` `Langfuse`
+
 ## How I build with agents
 
 **Agents I build** — an orchestrator with tool-using sub-agents, typed tool schemas, retrieval routing, and
