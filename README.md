@@ -1,3 +1,4 @@
+# kovarthanmuthusamy.github.io
 <h1 align="center">Hi, I'm Kovarthanam 👋</h1>
 <h3 align="center">ML Software Engineer · Agentic AI Systems</h3>
 
@@ -34,7 +35,7 @@ containers and CI — and LLM agents that use real engineering tools.
 <a href="https://github.com/kovarthanmuthusamy/pdn-genai-optimization"><img src="https://raw.githubusercontent.com/kovarthanmuthusamy/pdn-genai-optimization/main/docs/images/assistant-design-view.png" width="760" alt="PDN design assistant: board, predicted impedance spectrum and impedance map"></a>
 
 My master's thesis. An AI model that predicts how a board's power supply behaves in milliseconds instead of a
-12-second simulation, plus a web app that suggests better designs.
+12-second simulation, plus a web app that suggests better designs. Published at the [2026 Kleinheubach Conference (IEEE)](https://doi.org/10.23919/IEEECONF72572.2026.11743273).
 
 - Trained on **30,000 simulated layouts**; typical error **2.9 %**
 - Checks **≈ 25,000 layouts per second** vs ≈ 12 s per layout in the simulator
@@ -85,6 +86,11 @@ Finds why a Kubernetes app broke and proposes the fix as a pull request for a hu
 - Safe by design: the agent can only read; every fix needs human approval
 
 `Kubernetes` `Ollama` `LangGraph` `MCP` `ArgoCD`
+
+## Publications
+
+- N. G. Shoaee, **K. Muthusamy**, W. John, R. Brüning and J. Götze, "[A Variational Autoencoder Framework for PCB Power Delivery Network Design](https://doi.org/10.23919/IEEECONF72572.2026.11743273)," *2026 Kleinheubach Conference*, Miltenberg, Germany, 2026, pp. 1–4. IEEE.
+  A generative AI model that designs PCB power networks meeting a target impedance with as few capacitors as possible, without slow EM simulations.
 
 ## How I build with agents
 
