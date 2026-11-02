@@ -8,7 +8,7 @@ containers and CI — and LLM agents that use real engineering tools.
 </p>
 
 <p align="center">
-📍 Dortmund, Germany · 🎓 Master's thesis at TU Dortmund (2026) · 💼 Open to ML / AI engineering roles
+📍 Dortmund, Germany · 🎓 Master's Graduate Dortmund (2026) · 💼 Open to ML / AI engineering roles
 </p>
 
 <p align="center">
