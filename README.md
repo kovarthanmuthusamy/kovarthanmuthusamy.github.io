@@ -1,4 +1,3 @@
-# kovarthanmuthusamy.github.io
 <h1 align="center">Hi, I'm Kovarthanam 👋</h1>
 <h3 align="center">ML Software Engineer · Agentic AI Systems</h3>
 
@@ -8,7 +7,7 @@ containers and CI — and LLM agents that use real engineering tools.
 </p>
 
 <p align="center">
-📍 Dortmund, Germany · 🎓 Master's Graduate Dortmund (2026) · 💼 Open to ML / AI engineering roles
+📍 Dortmund, Germany · 🎓 M.Sc. Automation and Robotics, TU Dortmund (2026) · 💼 Open to ML / AI engineering roles
 </p>
 
 <p align="center">
@@ -30,92 +29,67 @@ containers and CI — and LLM agents that use real engineering tools.
 
 ## Featured projects
 
-### 🔌 [PDN Design Assistant](https://github.com/kovarthanmuthusamy/pdn-genai-optimization) — generative AI for PCB power delivery
+### 🔌 [PDN Design Assistant](https://github.com/kovarthanmuthusamy/pdn-genai-optimization) — AI for circuit-board power design
 
 <a href="https://github.com/kovarthanmuthusamy/pdn-genai-optimization"><img src="https://raw.githubusercontent.com/kovarthanmuthusamy/pdn-genai-optimization/main/docs/images/assistant-design-view.png" width="760" alt="PDN design assistant: board, predicted impedance spectrum and impedance map"></a>
 
-My master's thesis, packaged as a working product. A product-of-experts VAE learns how decoupling-capacitor
-placements shape a board's impedance spectrum and spatial impedance map. A latent-space search designs
-placements for a target, and a web app with the field solver in the loop checks and fixes layouts live.
+My master's thesis. An AI model that predicts how a board's power supply behaves in milliseconds instead of a
+12-second simulation, plus a web app that suggests better designs.
 
-- **30,000 simulated layouts** from a batched, resumable eCADSTAR pipeline (about 100 h of solver time)
-- **2.9 % typical error** per frequency point of the predicted spectrum
-- **≈ 25,000 layouts per second** judged by the model, against ≈ 12 s per layout in the solver
-- Inverse design reaches the **smallest feasible decap budgets**; 87–98 % of its proposals pass in simulation
-- FastAPI service and browser UI, multi-stage Docker images, GitHub Actions CI, MLflow tracking, 116 data-free tests
+- Trained on **30,000 simulated layouts**; typical error **2.9 %**
+- Checks **≈ 25,000 layouts per second** vs ≈ 12 s per layout in the simulator
+- Finds designs with the fewest components; **87–98 %** of proposals pass a real simulation
+- Web app + API, Docker, CI, MLflow, 116 automated tests
 
-`PyTorch` `DDP` `Graph networks` `VAE` `FiLM` `FastAPI` `Docker` `GitHub Actions` `MLflow` `pytest`
+`PyTorch` `DDP` `VAE` `FastAPI` `Docker` `GitHub Actions` `MLflow`
 
-### 🤖 [Multi-Agent LLM Assistant for PCB CAD](https://github.com/kovarthanmuthusamy/pcb-cad-llm-assistant) — agents that operate a real EDA tool
+### 🤖 [Multi-Agent AI Assistant for Circuit Design](https://github.com/kovarthanmuthusamy/pcb-cad-llm-assistant)
 
-Team research project at TU Dortmund. An orchestrator LLM breaks a request into steps and routes each step to
-a specialised agent: a fine-tuned PCB expert, a RAG agent over documents and the web, a simulation agent that
-drives eCADSTAR, and a vision agent that turns circuit and result images into text for the planner.
+Team project (8 people). Answers circuit-design questions, runs simulations from plain English and explains
+the results. I built the agent logic and most of the backend.
 
-- I owned the **LangChain ReAct orchestration**, the **RAG sub-agent** (LLM router + Chroma vector store) and the
-  **eCADSTAR integration**
-- **Model-agnostic** orchestrator: DeepSeek-R1 locally via Ollama, GPT-4o or Gemini 1.5 Pro
-- Tools registered as typed LangChain `StructuredTool`s with Pydantic schemas; one JSON action per step
-- Fine-tuned sub-agents: DeepSeek-R1-Distill-Llama-8B + LoRA (domain expert), Granite-Vision-3.2-2B, 4-bit + LoRA (vision)
-- Contract tests in CI; proprietary CAD files, weights and corpora deliberately kept out of the public repo
+- A coordinating agent routes each request to the right specialist: expert model, document search or simulation
+- Runs on local or cloud models (DeepSeek-R1, GPT-4o, Gemini) without code changes
+- Fine-tuned an 8B open-source model (LoRA) as the domain expert
+- Plain English → checked simulation settings; 130 automated tests
 
-`LangChain` `ReAct` `RAG` `ChromaDB` `Sentence-BERT` `LoRA` `Ollama` `eCADSTAR`
+`LangChain` `RAG` `ChromaDB` `LoRA` `Ollama` `Pydantic`
 
-### 💶 [Finance Agent](https://github.com/kovarthanmuthusamy/Finance_agent) — local-first finance analytics
+### 🚗 [Camera + LiDAR Perception Service](https://github.com/kovarthanmuthusamy/Sensor-fusion)
 
-A privacy-first app that turns raw bank statements into budgets, cash-flow analysis and forecasts, built with
-an emphasis on data integrity, reproducibility and tests.
+Spots cars and people and tells how far away they are, from a camera and LiDAR.
 
-- Ingests Sparkasse CSV exports and read-only FinTS data, with duplicate-safe imports
-- SQLite + SQLAlchemy + Alembic persistence with exact integer-cent amounts; Pydantic validation; keyring for credentials
-- Recurrence detection, forecasting checked with rolling backtests, scenario analysis and Monte Carlo reserve risk
-- 31 tests, Ruff and GitHub Actions
+- LiDAR cuts the distance error **8.1 % → 4.3 %**, at night **10.9 % → 3.6 %**
+- Answers in **≈ 0.1 s on a CPU**, about 10 requests per second
+- Production-ready API: health checks, monitoring, logging, overload protection, secure container
+- 372 tests (95 % coverage); built with Claude Code, every change reviewed
 
-`Python` `Streamlit` `SQLAlchemy` `Alembic` `Pydantic` `Plotly` `pytest`
+`PyTorch` `ONNX Runtime` `FastAPI` `Docker` `Prometheus` `Claude Code`
 
-### 🌙 [Night-time Camera + LiDAR Fusion](https://github.com/kovarthanmuthusamy/Sensor-fusion) 
+### 💶 [Finance Agent](https://github.com/kovarthanmuthusamy/Finance_agent) — private budgeting and forecasts
 
-Does LiDAR help a camera detector in the dark, and by how much? One network that finds road users and
-estimates their distance was trained on nuScenes twice, from the front camera alone and with projected LiDAR,
-and compared on day and night scenes with proper uncertainty. **LiDAR roughly halves the distance error
-(8.1% → 4.3%; at night 10.9% → 3.6%).** The first fusion model was no better than the camera-only one; I
-traced that to an input that was 99% empty, fixed it, and checked the fix with an experiment whose pass/fail
-rule I wrote down beforehand. The result is shipped as an ONNX model behind a FastAPI service (about 112 ms
-per request on CPU), with health and readiness probes, Prometheus metrics, load shedding, a non-root
-container and CI. Built with Claude Code as an AI pair programmer under a review-every-diff workflow: I made
-and recorded the decisions (14 ADRs), the agent wrote the code, and 372 tests plus independent checks (my mAP
-matches `pycocotools`) kept it honest.
+Turns bank statements into budgets and cash-flow forecasts. All data stays on the user's computer.
 
-`PyTorch` `ONNX Runtime` `FastAPI` `Docker` `nuScenes` `Hydra` `W&B` `GitHub Actions` `Claude Code`
+- Imports Sparkasse exports and skips duplicates automatically
+- Forecasts 14–90 days ahead and shows the risk of running low on money
+- SQLite with versioned schema changes and exact cent amounts; 31 tests in CI
 
-### 🩺 [KubMedic](https://github.com/kovarthanmuthusamy/kubmedic) — self-healing Kubernetes incident-response agent *(in progress)*
+`Python` `Streamlit` `SQLAlchemy` `Alembic` `pytest`
 
-An agent that detects a failure in a running microservice system, investigates it with read-only tools
-(kubectl, PromQL, LogQL over MCP) and opens the fix as a pull request; a human approves and ArgoCD deploys it.
-An eval harness will compare local models (Ollama) with a paid API on 10–12 fault scenarios.
+### 🩺 [KubeMedic](https://github.com/kovarthanmuthusamy/kubmedic) — AI agent that fixes broken cloud apps *(in progress)*
 
-- **Done:** SHA-256-verified tool installers, a three-node kind cluster pinned by digest, Ollama on two GV100 GPUs
-  with a tool-calling smoke test, `make doctor`
-- **Planned:** LangGraph agent, Online Boutique + Prometheus/Loki, ArgoCD GitOps, Langfuse tracing, replay-based eval gate in CI
-- **Design:** safety in the architecture, not the prompt — read-only RBAC, PR-only writes, per-incident cost budget
+Finds why a Kubernetes app broke and proposes the fix as a pull request for a human to approve.
 
-`Kubernetes` `kind` `Helm` `Ollama` `LangGraph` `MCP` `LiteLLM` `ArgoCD` `Langfuse`
+- Done: local Kubernetes cluster and local AI models on two GPUs, set up reproducibly
+- Next: the agent, monitoring, and a benchmark of 10–12 real failure cases
+- Safe by design: the agent can only read; every fix needs human approval
+
+`Kubernetes` `Ollama` `LangGraph` `MCP` `ArgoCD`
 
 ## How I build with agents
 
-**Agents I build** — an orchestrator with tool-using sub-agents, typed tool schemas, retrieval routing, and
-vision-to-text so that a text-only planner can reason over images (the PCB CAD assistant above).
-
-**Agents I build with** — I use coding agents (Claude Code, Cursor) like a team I direct, with guard rails:
-
-- **Evidence-first multi-agent pipeline for my thesis.** An *evidence extractor* returns only facts it can point
-  at in a file → a *literature researcher* verifies every citation against its source → a *writer* with no
-  repository or web access drafts from those facts only → an *adversarial reviewer* audits every number, symbol
-  and claim → revision. The pipeline is scripted as a Claude Code workflow with custom sub-agents.
-- **Rules the agents must follow.** Every numerical claim cites a result file; path-scoped rules, hooks
-  (auto-format, session status) and custom skills keep sessions consistent.
-- **I review every diff.** Agents do the typing; I make the design decisions, review each change, and keep pull
-  requests small with CI on every push.
+- **I use coding agents (Claude Code, Cursor) like a team I direct:** they write code, I make the design decisions and review every change.
+- **Guard rails:** every number cites a result file, CI runs on every push, and pull requests stay small.
 
 ## Tech stack
 
