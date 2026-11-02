@@ -88,7 +88,7 @@ matches `pycocotools`) kept it honest.
 
 `PyTorch` `ONNX Runtime` `FastAPI` `Docker` `nuScenes` `Hydra` `W&B` `GitHub Actions` `Claude Code`
 
-### 🩺 [KubeMedic](https://github.com/kovarthanmuthusamy/kubmedic) — self-healing Kubernetes incident-response agent *(in progress)*
+### 🩺 [KubMedic](https://github.com/kovarthanmuthusamy/kubmedic) — self-healing Kubernetes incident-response agent *(in progress)*
 
 An agent that detects a failure in a running microservice system, investigates it with read-only tools
 (kubectl, PromQL, LogQL over MCP) and opens the fix as a pull request; a human approves and ArgoCD deploys it.
