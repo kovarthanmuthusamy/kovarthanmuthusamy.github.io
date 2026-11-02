@@ -152,6 +152,13 @@ section { padding-block: 56px 8px; }
 .repo { margin: 14px 0 0; }
 .repo a { font: 500 .8rem var(--mono); letter-spacing: .04em; color: var(--board); text-decoration: none; border-bottom: 1px solid currentColor; }
 .repo a:hover { color: var(--accent); }
+.pubs { list-style: none; margin: 20px 0 0; padding: 0; }
+.pubs li { padding: 20px 0; border-top: 1px solid var(--line); max-width: 52em; }
+.pubs h3 { font: 700 clamp(1.15rem, 2.2vw, 1.4rem)/1.25 var(--display); margin: 6px 0 6px; }
+.pubs h3 a { text-decoration: none; }
+.pubs h3 a:hover { color: var(--board); }
+.pubs .authors { color: var(--muted); margin: 0 0 8px; }
+.pubs p { margin: 0 0 8px; }
 
 /* flow diagrams */
 .flowwrap { margin: 0 0 12px; }
@@ -215,6 +222,7 @@ footer .rule { border-top: 1px solid var(--line); padding-top: 18px; }
     <a class="mark" href="#top"><b>&lt;</b>K. Muthusamy<b>/&gt;</b></a>
     <nav class="nav" aria-label="Sections">
       <a href="#work"><span lang="en">Work</span><span lang="de">Projekte</span></a>
+      <a href="#publications"><span lang="en">Publications</span><span lang="de">Publikationen</span></a>
       <a href="#experience"><span lang="en">Experience</span><span lang="de">Werdegang</span></a>
       <a href="#skills"><span lang="en">Skills</span><span lang="de">Kenntnisse</span></a>
       <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span></a>
@@ -269,6 +277,7 @@ footer .rule { border-top: 1px solid var(--line); padding-top: 18px; }
     <dl><div><dt><span lang="en">Where</span><span lang="de">Wo</span></dt><dd>TU Dortmund</dd></div><div><dt><span lang="en">Focus</span><span lang="de">Schwerpunkt</span></dt><dd><span lang="en">Generative AI, inverse design, MLOps</span><span lang="de">Generative KI, Inverse Design, MLOps</span></dd></div></dl>
     <ul class="tags"><li>PyTorch</li><li>DDP</li><li><span lang="en">Graph networks</span><span lang="de">Graphnetze</span></li><li>VAE</li><li>FiLM</li><li>FastAPI</li><li>Docker</li><li>GitHub Actions</li><li>MLflow</li><li>pytest</li></ul>
     <p class="repo"><a href="https://github.com/kovarthanmuthusamy/pdn-genai-optimization" target="_blank" rel="noopener"><span lang="en">Code on GitHub</span><span lang="de">Code auf GitHub</span> &#8599;</a></p>
+    <p class="repo"><a href="https://doi.org/10.23919/IEEECONF72572.2026.11743273" target="_blank" rel="noopener"><span lang="en">IEEE paper (2026)</span><span lang="de">IEEE-Paper (2026)</span> &#8599;</a></p>
   </aside>
   <div class="body">
     <h3><span lang="en">PDN Design Assistant: AI for circuit-board power design</span><span lang="de">PDN Design Assistant: KI für das Stromversorgungsdesign von Leiterplatten</span></h3>
@@ -351,6 +360,21 @@ footer .rule { border-top: 1px solid var(--line); padding-top: 18px; }
     <ul class="built"><li><span lang="en">Programmed welding robots offline and tested them on the production line.</span><span lang="de">Schweißroboter offline programmiert und an der Fertigungslinie getestet.</span></li><li><span lang="en">Added a second positioner so loading and welding run at the same time, removing robot idle time.</span><span lang="de">Einen zweiten Positionierer ergänzt, sodass Beladen und Schweißen gleichzeitig laufen und der Roboter nicht mehr wartet.</span></li><li><span lang="en">Wrote a C++ tool that generates robot programs for new part variants.</span><span lang="de">Ein C++-Tool geschrieben, das Roboterprogramme für neue Bauteilvarianten erzeugt.</span></li></ul>
   </div>
 </article>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head"><span class="pad"></span><h2><span lang="en">Publications</span><span lang="de">Publikationen</span></h2><span class="trace"></span></div>
+    <ul class="pubs">
+      <li>
+        <p class="mono">2026 Kleinheubach Conference · Miltenberg, Germany · IEEE</p>
+        <h3><a href="https://doi.org/10.23919/IEEECONF72572.2026.11743273" target="_blank" rel="noopener">A Variational Autoencoder Framework for PCB Power Delivery Network Design</a></h3>
+        <p class="authors">N. G. Shoaee, <b>K. Muthusamy</b>, W. John, R. Brüning, J. Götze</p>
+        <p><span lang="en">A generative AI model that designs circuit-board power networks meeting a target impedance with as few capacitors as possible, and predicts their behaviour without slow electromagnetic simulations. Based on my master's thesis work.</span><span lang="de">Ein generatives KI-Modell, das Stromversorgungsnetze auf Leiterplatten so entwirft, dass sie eine Zielimpedanz mit möglichst wenigen Kondensatoren einhalten, und ihr Verhalten ohne langsame elektromagnetische Simulationen vorhersagt. Basiert auf meiner Masterarbeit.</span></p>
+        <p class="repo"><a href="https://doi.org/10.23919/IEEECONF72572.2026.11743273" target="_blank" rel="noopener">DOI 10.23919/IEEECONF72572.2026.11743273 &#8599;</a></p>
+      </li>
+    </ul>
   </div>
 </section>
 
