@@ -1,3 +1,5 @@
+![cover](cover.png)
+
 # kovarthanmuthusamy.github.io
 <h1 align="center">Hi, I'm Kovarthanam 👋</h1>
 <h3 align="center">ML Software Engineer · Agentic AI Systems</h3>
