@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -20,7 +20,7 @@
   "sameAs": ["https://github.com/kovarthanmuthusamy", "https://www.linkedin.com/in/kovarthanam-muthusamy-4a8107253", "https://www.xing.com/profile/Kovarthanam_Muthusamy047807"]
 }</script>
 <script>
-try { var l = localStorage.getItem('lang'); if (l !== 'de' && l !== 'en') l = (navigator.language || '').toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
+try { var l = localStorage.getItem('lang'); if (l !== 'de' && l !== 'en') l = 'de';
   document.documentElement.setAttribute('data-lang', l); document.documentElement.setAttribute('lang', l);
   var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
@@ -448,8 +448,7 @@ footer .rule { border-top: 1px solid var(--line); padding-top: 18px; }
     store('lang', l);
   }
   var saved = load('lang');
-  var guess = (navigator.language || '').toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
-  setLang(saved === 'de' || saved === 'en' ? saved : guess);
+  setLang(saved === 'de' || saved === 'en' ? saved : 'de');
   document.getElementById('b-en').addEventListener('click', function () { setLang('en'); });
   document.getElementById('b-de').addEventListener('click', function () { setLang('de'); });
 
